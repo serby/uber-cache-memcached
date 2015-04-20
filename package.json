@@ -25,7 +25,7 @@
   { "mocha": "*"
   , "async": "*"
   , "should": "*"
-  , "uber-cache": ">= 0.2.0"
+  , "uber-cache": "^0.2.0"
   , "jshint": "2.x"
   }
 }

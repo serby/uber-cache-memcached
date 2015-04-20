@@ -1,4 +1,4 @@
-var _ = require('lodash'), 
+var _ = require('lodash'),
     EventEmitter = require('events').EventEmitter,
     noop = function() {},
     Memcached = require('memcached');
@@ -68,7 +68,7 @@ module.exports = function(options) {
         return callback(err);
       }
 
-      if (encoded === false) {
+      if (encoded === false || encoded === undefined) {
         callback(err, undefined);
         handle.emit('miss', key);
         return;
