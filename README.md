@@ -1,5 +1,8 @@
 # Memcached engine for Uber Cache
 
+[![build status](https://secure.travis-ci.org/serby/uber-cache-memcached.png)](http://travis-ci.org/serby/uber-cache-memcached)
+[![dependency status](https://david-dm.org/serby/uber-cache-memcached.svg)](https://david-dm.org/serby/uber-cache-memcached)
+
 ## Installation
 
       npm install uber-cache-memcached
@@ -8,22 +11,22 @@
 
 ```js
 
-var cache = require('uber-cache').createUberCache({
-  engine: require('uber-cache-memcached')({
-    serverLocations: ["127.0.0.1:11211"]
-  })
-});
+var UberCacheMemcached = require('uber-cache-memcached')
+  , Memcached = require('memcached')
+  , cache = new UberCacheMemcached(new Memcached())
 
 cache.set('the key', 'the value', function(error) {
   cache.get('the key', function(error, value) {
-    console.log(value);
-  });
-});
+    console.log(value)
+  })
+})
 
 ```
 
 ## Credits
-[Rémy Hubscher](https://github.com/Natim/) follow me on [twitter](http://twitter.com/Natim)
+
+Kuba Stawiarski
 
 ## Licence
+
 Licenced under the [New BSD License](http://opensource.org/licenses/bsd-license.php)
