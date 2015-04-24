@@ -2,16 +2,16 @@
   "author": "Rémy Hubscher <natim@mozilla.com>",
   "name": "uber-cache-memcached",
   "description": "Memcached backend uber-cache interface",
-  "version": "0.1.0-DEV",
+  "version": "1.0.0",
   "tags": [
     "cache",
     "memory",
     "memcached"
-  ], 
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:serby/uber-cache-memcached"
-  }, 
+  },
   "main": "uber-cache-memcached.js",
   "scripts": {
     "lint": "jshint . --reporter=./node_modules/jshint-full-path/index.js",
