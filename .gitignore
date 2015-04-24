@@ -1,1 +1,25 @@
-node_modules/
+/.monitor
+
+# Windows
+Thumbs.db
+
+# Vim
+.*.sw[a-z]
+*.un~i
+tags
+
+# Idea
+.idea
+
+# OsX
+.DS_Store
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+
+# nodejs npm modules
+/node_modules
+
+# ZSH Cake plugin cache
+/.cake_task_cache
