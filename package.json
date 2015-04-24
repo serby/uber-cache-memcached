@@ -1,5 +1,5 @@
 {
-  "author": "Rémy Hubscher <natim@mozilla.com>",
+  "author": "Kuba Stawiarski <kuba.stawiarski@gmail.com>",
   "name": "uber-cache-memcached",
   "description": "Memcached backend uber-cache interface",
   "version": "0.1.0-DEV",

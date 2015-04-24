@@ -112,10 +112,8 @@ UberCacheMemcached.prototype.clear = function(callback) {
   }).bind(this))
 }
 
-/* This function parses the output from `stats items`, extracts slabid and then
-   calls `stats cachedump` for each of the slabs to get the items back.
-   It is therefore very slow and should not be used. It is here only to make
-   testing possible.
+/* Update: this function is bugged and will only work with single server — please do not use!
+           (it is only here to make testing possible)
 */
 UberCacheMemcached.prototype.size = function(callback) {
 
