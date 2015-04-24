@@ -1,31 +1,39 @@
-{ "author": "Rémy Hubscher <natim@mozilla.com>"
-, "name": "uber-cache-memcached"
-, "description": "Memcached Engine for uber-cache"
-, "version": "0.1.0-DEV"
-, "tags":
-  [ "cache"
-  , "memory"
-  , "memcached"
-  ]
-, "repository":
-  { "type": "git"
-  , "url": "git@github.com:natim/uber-cache-memcached"
-  }
-, "main": "memcachedEngine.js"
-, "scripts":
-  { "test": "mocha -r should"
-  }
-, "engines":
-  { "node": ">0.6.0" }
-, "dependencies":
-  { "lodash": "*"
-  , "memcached": "*"
-  }
-, "devDependencies":
-  { "mocha": "*"
-  , "async": "*"
-  , "should": "*"
-  , "uber-cache": ">= 0.2.0"
-  , "jshint": "2.x"
+{
+  "author": "Kuba Stawiarski <kuba.stawiarski@gmail.com>",
+  "name": "uber-cache-memcached",
+  "description": "Memcached backend uber-cache interface",
+  "version": "0.1.0-DEV",
+  "tags": [
+    "cache",
+    "memory",
+    "memcached"
+  ], 
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:serby/uber-cache-memcached"
+  }, 
+  "main": "uber-cache-memcached.js",
+  "scripts": {
+    "lint": "jshint . --reporter=./node_modules/jshint-full-path/index.js",
+    "pretest": "npm run-script lint",
+    "test": "istanbul cover ./node_modules/.bin/_mocha -- -R spec -r should",
+    "posttest": "istanbul check-coverage && rm -rf coverage"
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
+  "dependencies": {
+    "memcached": "^2.1.0",
+    "through": "^2.3.6"
+  },
+  "devDependencies": {
+    "async": "^0.9.0",
+    "istanbul": "^0.3.5",
+    "jshint": "^2.5.11",
+    "jshint-full-path": "^1.1.1",
+    "mocha": "^2.1.0",
+    "should": "^6.0.1",
+    "stream-assert": "^2.0.2",
+    "uber-cache": "^2.1.0"
   }
 }

@@ -1,13 +1,16 @@
-var _ = require('lodash');
+var Memcached = require('memcached')
+  , UberCacheMemcached = require('..')
 
-require('uber-cache/test/engine')('memcachedEngine', function(options) {
+describe('uber-cache-memcached', function() {
+  var memcached = new Memcached()
+    , engine
 
-  options = _.extend({
-    serverLocations: ["127.0.0.1:11211"]
-  }, options);
+  beforeEach(function (done) {
+    engine = new UberCacheMemcached(memcached)
+    engine.clear(done)
+  })
 
-  var engine = require('../')(options);
-
-  engine.clear();
-  return engine;
-});
+  require('uber-cache/test/conformance-test')('uber-cache-memcached', function() {
+    return engine
+  })
+})
