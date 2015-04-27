@@ -77,7 +77,7 @@ UberCacheMemcached.prototype.get = function(key, callback) {
 
     if (!cachePacket) {
       this.emit('miss', key)
-      return callback(null, null)
+      return callback(null)
     }
 
     value = cachePacket.data
