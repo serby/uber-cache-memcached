@@ -37,6 +37,6 @@
     "mocha": "^2.2.5",
     "should": "^7.0.2",
     "stream-assert": "^2.0.2",
-    "uber-cache": "^2.1.0"
+    "uber-cache": "^2.1.4"
   }
 }
