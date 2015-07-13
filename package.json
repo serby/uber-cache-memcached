@@ -2,7 +2,7 @@
   "author": "Kuba Stawiarski <kuba.stawiarski@gmail.com>",
   "name": "uber-cache-memcached",
   "description": "Memcached backend uber-cache interface",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "tags": [
     "cache",
     "memory",
