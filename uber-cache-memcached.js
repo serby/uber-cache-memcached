@@ -86,8 +86,10 @@ UberCacheMemcached.prototype.get = function(key, callback) {
       this.delete(key)
       this.emit('miss', key)
       this.emit('stale', key, value, cachePacket.expiryTime)
-      value = undefined
+      return callback(null, undefined)
     }
+
+    this.emit('hit', key)
 
     callback(null, value)
   }).bind(this))
