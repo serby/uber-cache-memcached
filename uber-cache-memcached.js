@@ -4,6 +4,13 @@ var EventEmitter = require('events').EventEmitter
   , through = require('through')
   , noop = function () {}
 
+function formatKey(key) {
+  key = key.replace(/_/g, '#_#')
+  key = key.replace(/ /g, '_')
+  return key
+}
+
+
 function UberCacheMemcached(memcached) {
   this.memcached = memcached
 }
@@ -41,6 +48,8 @@ UberCacheMemcached.prototype.set = function(key, value, ttl, callback) {
     return callback(new Error('Invalid key undefined'))
   }
 
+  key = formatKey(key)
+
   // Check for cyclic reference
   try {
     JSON.stringify(value)
@@ -70,6 +79,7 @@ UberCacheMemcached.prototype.set = function(key, value, ttl, callback) {
 }
 
 UberCacheMemcached.prototype.get = function(key, callback) {
+  key = formatKey(key)
   this.memcached.get(key, (function (error, cachePacket) {
     var value
 
@@ -97,6 +107,8 @@ UberCacheMemcached.prototype.get = function(key, callback) {
 
 UberCacheMemcached.prototype.delete = function(key, callback) {
   if (typeof callback !== 'function') callback = noop
+
+  key = formatKey(key)
 
   this.memcached.delete(key, (function(error) {
     if (error) return callback(error)
