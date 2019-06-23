@@ -1,7 +1,7 @@
 # Memcached engine for Uber Cache
 
 [![build status](https://secure.travis-ci.org/serby/uber-cache-memcached.png)](http://travis-ci.org/serby/uber-cache-memcached)
-[![dependency status](https://david-dm.org/serby/uber-cache-memcached.svg)](https://david-dm.org/serby/uber-cache-memcached)
+[![dependency status](https://david-dm.org/serby/uber-cache-memcached.svg)](https://david-dm.org/serby/uber-cache-memcached) [![Greenkeeper badge](https://badges.greenkeeper.io/serby/uber-cache-memcached.svg)](https://greenkeeper.io/)
 
 ## Installation
 
