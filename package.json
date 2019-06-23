@@ -29,13 +29,13 @@
     "through": "^2.3.8"
   },
   "devDependencies": {
-    "async": "^2.0.0-rc.6",
+    "async": "^3.1.0",
     "istanbul": "^0.4.4",
     "jshint": "^2.9.2",
     "jshint-full-path": "^1.1.1",
     "memcached": "^2.2.2",
-    "mocha": "^2.5.3",
-    "should": "^9.0.2",
+    "mocha": "^6.1.4",
+    "should": "^13.2.3",
     "stream-assert": "^2.0.3",
     "uber-cache": "^2.1.5"
   }
