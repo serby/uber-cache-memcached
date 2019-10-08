@@ -1,16 +1,19 @@
 var Memcached = require('memcached')
-  , UberCacheMemcached = require('..')
+var UberCacheMemcached = require('..')
 
 describe('uber-cache-memcached', function() {
   var memcached = new Memcached()
-    , engine
+  var engine
 
-  beforeEach(function (done) {
+  beforeEach(function(done) {
     engine = new UberCacheMemcached(memcached)
     engine.clear(done)
   })
 
-  require('uber-cache/test/conformance-test')('uber-cache-memcached', function() {
-    return engine
-  })
+  require('uber-cache/test/conformance-test')(
+    'uber-cache-memcached',
+    function() {
+      return engine
+    }
+  )
 })

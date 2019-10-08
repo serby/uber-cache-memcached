@@ -17,10 +17,12 @@
   },
   "main": "uber-cache-memcached.js",
   "scripts": {
-    "lint": "jshint . --reporter=./node_modules/jshint-full-path/index.js",
+    "lint": "eslint -f unix .",
+    "bench": "node benchmark/uber-cache.bench",
     "pretest": "npm run-script lint",
-    "test": "istanbul cover ./node_modules/.bin/_mocha -- -R spec -r should",
-    "posttest": "istanbul check-coverage && rm -rf coverage"
+    "test": "nyc mocha test/*.test.js",
+    "posttest": "nyc check-coverage && rm -rf coverage",
+    "prettier": "prettier --write '**/*.js'"
   },
   "engines": {
     "node": ">=0.10"
@@ -30,13 +32,21 @@
   },
   "devDependencies": {
     "async": "^2.0.0-rc.6",
-    "istanbul": "^0.4.4",
-    "jshint": "^2.9.2",
-    "jshint-full-path": "^1.1.1",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-config-prettier-standard": "^3.0.1",
+    "eslint-config-standard": "^13.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
     "memcached": "^2.2.2",
-    "mocha": "^2.5.3",
-    "should": "^9.0.2",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
+    "prettier": "^1.18.2",
+    "should": "^13.2.3",
     "stream-assert": "^2.0.3",
-    "uber-cache": "^2.1.5"
+    "uber-cache": "^2.2.2"
   }
 }
